@@ -12,19 +12,20 @@ import java.time.LocalDate;
 
     public class PatientDto {
 
-        private Long id;
-        private String email;
-        private String firstName;
-        private String lastName;
-        private LocalDate birthday;
+    private Long id;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private LocalDate birthday;
 
-        @Override
-        public String toString() {
-            return "PatientDto{" +
-                    "id : " + id +
-                    ", email : '" + email + '\'' +
-                    ", first name : '" + firstName + '\'' +
-                    ", last name : '" + lastName + '\'' +
-                    ", birthday : " + birthday +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "PatientDto{" +
+                "id : " + id +
+                ", email : '" + email + '\'' +
+                ", first name : '" + firstName + '\'' +
+                ", last name : '" + lastName + '\'' +
+                ", birthday : " + birthday +
+                '}';
+    }
+}
