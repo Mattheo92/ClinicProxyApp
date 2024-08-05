@@ -1,4 +1,4 @@
-package com.Mattheo92.ClinicProxyApp.exception;
+package com.Mattheo92.ClinicProxyApp.handler.exception;
 
 public class ExceptionMessage {
     private String message;

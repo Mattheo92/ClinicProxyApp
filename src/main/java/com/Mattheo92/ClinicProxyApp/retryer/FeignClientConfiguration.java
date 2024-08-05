@@ -4,7 +4,9 @@ import com.Mattheo92.ClinicProxyApp.decoder.RetreiveMessageErrorDecoder;
 import feign.Retryer;
 import feign.codec.ErrorDecoder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class FeignClientConfiguration {
     @Bean
     public Retryer retryer() {

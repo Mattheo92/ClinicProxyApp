@@ -23,19 +23,19 @@ public interface ProxyClient {
     @DeleteMapping("visits/{visitId}")
     void cancelVisit(@PathVariable Long visitId);
 
-    @GetMapping("visits/doctors/{doctorId}/available")
+    @GetMapping("visits/doctors/{doctorId}/available-visits")
      List<VisitDto> getAvailableVisitsByDoctorId(
             @PathVariable("doctorId") Long doctorId);
 
-    @GetMapping("visits/specialization/{start}/{end}")
+    @GetMapping("visits")
     List<VisitDto> getVisitsByDoctorSpecializationAndStartDateBetween(
-            @RequestParam("specialization") String specialization, @PathVariable("start")
+            @RequestParam("specialization") String specialization, @RequestParam("start")
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate start,
-            @PathVariable("end")
+            @RequestParam("end")
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end);
 
-    @GetMapping("visit/range/{start}/{end}")
+    @GetMapping("visits/range")
     public List<VisitDto> getAvailableVisitsAndDateRange(
-            @PathVariable("start") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate start,
-            @PathVariable("end") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end);
+            @RequestParam("start") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate start,
+            @RequestParam("end") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end);
 }

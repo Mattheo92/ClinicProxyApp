@@ -21,7 +21,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8081:8081"
+      - "8083:8083"
     environment:
       SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_MEDICALCLINIC_URL: http://medicalclinic:8080
     networks:
@@ -36,8 +36,8 @@ services:
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
     networks:
       - backend
 
@@ -51,8 +51,8 @@ services:
       - "80:80"
     depends_on:
       - postgres
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
+#    volumes:
+#      - pgadmin_data:/var/lib/pgadmin
     networks:
       - backend
 
@@ -60,6 +60,6 @@ networks:
   backend:
     driver: bridge
 
-volumes:
-  postgres_data:
-  pgadmin_data:
+#volumes:
+#  postgres_data:
+#  pgadmin_data:

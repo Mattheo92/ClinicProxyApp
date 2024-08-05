@@ -1,6 +1,6 @@
 package com.Mattheo92.ClinicProxyApp.decoder;
 
-import com.Mattheo92.ClinicProxyApp.exception.ExceptionMessage;
+import com.Mattheo92.ClinicProxyApp.handler.exception.ExceptionMessage;
 import feign.Response;
 import feign.RetryableException;
 import feign.codec.ErrorDecoder;
@@ -34,8 +34,7 @@ public class RetreiveMessageErrorDecoder implements ErrorDecoder {
                     response.request().httpMethod(),
                     Date.from(Instant.now().plusMillis(5000)),
                     response.request());
-        } 
-        
+        }
             return errorDecoder.decode(methodKey, response);
     }
 }

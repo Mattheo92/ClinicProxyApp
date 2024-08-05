@@ -1,8 +1,12 @@
 package com.Mattheo92.ClinicProxyApp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -14,4 +18,8 @@ public class Doctor {
     private String specialization;
     private String email;
     private String password;
+
+    @OneToMany(mappedBy = "doctor")
+    @JsonIgnore
+    private List<Visit> visits;
 }
